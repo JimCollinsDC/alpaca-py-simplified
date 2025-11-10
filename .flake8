@@ -1,0 +1,9 @@
+[flake8]
+max-line-length = 100
+extend-ignore = E203,W503,B902,B024
+select = C,E,F,W,B,B9
+max-complexity = 10
+import-order-style = google
+
+per-file-ignores =
+    alpaca/data/enums.py:E741
