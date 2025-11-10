@@ -44,9 +44,11 @@ This repository is a **modified version** of the [official alpaca-py SDK](https:
 
 - **📈 Simplified Trading API** - New `TradingHelper` class makes order placement and position management incredibly easy. Place bracket orders with stop loss and take profit in a single call. [Learn more →](docs/simplified_trading_api.md)
 
-- **� Simplified Stock Data API** - New `StockHelper` class makes fetching market data effortless. Simple timeframe strings like `"1H"` or `"1D"`, automatic date handling with `days_back`, and clean dataclass returns with Python native types. [Learn more →](docs/simplified_stock_data_api.md)
+- **📊 Simplified Stock Data API** - New `StockHelper` class makes fetching market data effortless. Simple timeframe strings like `"1H"` or `"1D"`, automatic date handling with `days_back`, and clean dataclass returns with Python native types. [Learn more →](docs/simplified_stock_data_api.md)
 
-- **�🔐 Environment Variable Support** - Integrated `python-dotenv` for secure API key management. Store your credentials in a `.env` file instead of hardcoding them.
+- **₿ Simplified Crypto Data API** - New `CryptoHelper` class provides clean access to cryptocurrency market data. Same simple patterns as StockHelper but optimized for crypto (BTC/USD, ETH/USD, etc.) with proper handling of crypto-specific features. [Learn more →](docs/simplified_crypto_data_api.md)
+
+- **� Environment Variable Support** - Integrated `python-dotenv` for secure API key management. Store your credentials in a `.env` file instead of hardcoding them.
 
 - **✅ Enhanced Code Quality** - Improved flake8 compliance, fixed type comparisons, exception handling, and code patterns across the codebase.
 
@@ -68,6 +70,13 @@ from alpaca.data.stock_helper import StockHelper
 data = StockHelper()  # Auto-loads from .env
 bars = data.get_bars("SPY", timeframe="1H", days_back=5)
 quote = data.get_latest_quote("SPY")
+
+# Crypto Data - Get cryptocurrency market data
+from alpaca.data.crypto_helper import CryptoHelper
+
+crypto = CryptoHelper()  # Auto-loads from .env
+btc_bars = crypto.get_bars("BTC/USD", timeframe="1H", days_back=7)
+btc_quote = crypto.get_latest_quote("BTC/USD")
 
 # Trading - Place orders with ease
 from alpaca.trading.trading_helper import TradingHelper
