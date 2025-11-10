@@ -44,7 +44,9 @@ This repository is a **modified version** of the [official alpaca-py SDK](https:
 
 - **📈 Simplified Trading API** - New `TradingHelper` class makes order placement and position management incredibly easy. Place bracket orders with stop loss and take profit in a single call. [Learn more →](docs/simplified_trading_api.md)
 
-- **🔐 Environment Variable Support** - Integrated `python-dotenv` for secure API key management. Store your credentials in a `.env` file instead of hardcoding them.
+- **� Simplified Stock Data API** - New `StockHelper` class makes fetching market data effortless. Simple timeframe strings like `"1H"` or `"1D"`, automatic date handling with `days_back`, and clean dataclass returns with Python native types. [Learn more →](docs/simplified_stock_data_api.md)
+
+- **�🔐 Environment Variable Support** - Integrated `python-dotenv` for secure API key management. Store your credentials in a `.env` file instead of hardcoding them.
 
 - **✅ Enhanced Code Quality** - Improved flake8 compliance, fixed type comparisons, exception handling, and code patterns across the codebase.
 
@@ -59,6 +61,13 @@ from alpaca.data.option_helper import OptionHelper
 helper = OptionHelper()  # Auto-loads from .env
 option = helper.get_option("SPY250117C00550000")
 print(f"Strike: ${option.strike}, IV: {option.implied_volatility:.2%}")
+
+# Stock Data - Get market data with simple timeframes
+from alpaca.data.stock_helper import StockHelper
+
+data = StockHelper()  # Auto-loads from .env
+bars = data.get_bars("SPY", timeframe="1H", days_back=5)
+quote = data.get_latest_quote("SPY")
 
 # Trading - Place orders with ease
 from alpaca.trading.trading_helper import TradingHelper
