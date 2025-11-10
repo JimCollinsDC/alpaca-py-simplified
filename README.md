@@ -5,6 +5,12 @@
 [![GitHub](https://img.shields.io/github/license/alpacahq/alpaca-py?color=blue)](https://github.com/alpacahq/alpaca-py/blob/master/LICENSE.md)
 [![PyPI](https://img.shields.io/pypi/v/alpaca-py?color=blue)](https://pypi.org/project/alpaca-py/)
 
+> **Note:** This is a modified version of the official [alpaca-py](https://github.com/alpacahq/alpaca-py) repository with additional features and improvements:
+> - **Simplified OptionHelper API** - Get complete option data with a single call
+> - **Environment variable support** - Secure API key management with python-dotenv
+> - **Enhanced code quality** - Flake8 compliant with comprehensive test coverage
+> - **Additional documentation** - Examples and guides for new features
+
 ## Table of Contents
 
 - [About](#about)
@@ -29,6 +35,39 @@
 ## About <a name="about"></a>
 
 Alpaca-py provides an interface for interacting with the API products Alpaca offers. These API products are provided as various REST, WebSocket and SSE endpoints that allow you to do everything from streaming market data to creating your own investment apps.
+
+This repository is a **modified version** of the [official alpaca-py SDK](https://github.com/alpacahq/alpaca-py) with enhancements for easier option trading and improved developer experience.
+
+### What's Different in This Fork?
+
+- **🎯 Simplified Option Data API** - New `OptionHelper` class eliminates the complexity of fetching option data. Get strike, bid/ask, greeks, IV, and volume in one simple call instead of managing multiple clients and requests. [Learn more →](docs/simplified_option_api.md)
+
+- **📈 Simplified Trading API** - New `TradingHelper` class makes order placement and position management incredibly easy. Place bracket orders with stop loss and take profit in a single call. [Learn more →](docs/simplified_trading_api.md)
+
+- **🔐 Environment Variable Support** - Integrated `python-dotenv` for secure API key management. Store your credentials in a `.env` file instead of hardcoding them.
+
+- **✅ Enhanced Code Quality** - Improved flake8 compliance, fixed type comparisons, exception handling, and code patterns across the codebase.
+
+- **📚 Better Documentation** - Additional examples, usage guides, and comprehensive test coverage for new features.
+
+### Quick Start with Simplified APIs
+
+```python
+# Option Data - Get complete option info in one call
+from alpaca.data.option_helper import OptionHelper
+
+helper = OptionHelper()  # Auto-loads from .env
+option = helper.get_option("SPY250117C00550000")
+print(f"Strike: ${option.strike}, IV: {option.implied_volatility:.2%}")
+
+# Trading - Place orders with ease
+from alpaca.trading.trading_helper import TradingHelper
+
+trader = TradingHelper()  # Auto-loads from .env
+order = trader.buy_with_bracket(
+    "SPY", qty=10, stop_loss=450.00, take_profit=550.00
+)
+```
 
 Learn more about the API products Alpaca offers at https://alpaca.markets.
 
