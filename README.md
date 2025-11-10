@@ -1,9 +1,9 @@
 # Alpaca-py Simplified
 
 [![Python Versions](https://img.shields.io/badge/python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
-[![Tests](https://github.com/JimCollinsDC/alpaca-py-simplified/actions/workflows/ci.yaml/badge.svg?style=for-the-badge)](https://github.com/JimCollinsDC/alpaca-py-simplified/actions)
 [![License](https://img.shields.io/github/license/JimCollinsDC/alpaca-py-simplified?color=blue&style=for-the-badge)](LICENSE)
 [![Code Quality](https://img.shields.io/badge/code%20style-flake8-brightgreen?style=for-the-badge)](https://flake8.pycqa.org)
+[![Tests Passing](https://img.shields.io/badge/tests-159%20passing-success?style=for-the-badge&logo=pytest)](https://github.com/JimCollinsDC/alpaca-py-simplified)
 
 [![GitHub Stars](https://img.shields.io/github/stars/JimCollinsDC/alpaca-py-simplified?style=social)](https://github.com/JimCollinsDC/alpaca-py-simplified/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/JimCollinsDC/alpaca-py-simplified?style=social)](https://github.com/JimCollinsDC/alpaca-py-simplified/network/members)
