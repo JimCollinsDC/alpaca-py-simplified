@@ -48,7 +48,9 @@ This repository is a **modified version** of the [official alpaca-py SDK](https:
 
 - **₿ Simplified Crypto Data API** - New `CryptoHelper` class provides clean access to cryptocurrency market data. Same simple patterns as StockHelper but optimized for crypto (BTC/USD, ETH/USD, etc.) with proper handling of crypto-specific features. [Learn more →](docs/simplified_crypto_data_api.md)
 
-- **� Environment Variable Support** - Integrated `python-dotenv` for secure API key management. Store your credentials in a `.env` file instead of hardcoding them.
+- **💼 Simplified Account Management API** - New `AccountHelper` class makes account management effortless. Get cash, buying power, portfolio value with native Python types. Built-in Pattern Day Trader tracking and portfolio history with simple date ranges. [Learn more →](docs/simplified_account_api.md)
+
+- **🔐 Environment Variable Support** - Integrated `python-dotenv` for secure API key management. Store your credentials in a `.env` file instead of hardcoding them.
 
 - **✅ Enhanced Code Quality** - Improved flake8 compliance, fixed type comparisons, exception handling, and code patterns across the codebase.
 
@@ -77,6 +79,14 @@ from alpaca.data.crypto_helper import CryptoHelper
 crypto = CryptoHelper()  # Auto-loads from .env
 btc_bars = crypto.get_bars("BTC/USD", timeframe="1H", days_back=7)
 btc_quote = crypto.get_latest_quote("BTC/USD")
+
+# Account Management - Check balances and PDT status
+from alpaca.trading.account_helper import AccountHelper
+
+account = AccountHelper()  # Auto-loads from .env
+print(f"Cash: ${account.get_cash():,.2f}")
+print(f"Buying Power: ${account.get_buying_power():,.2f}")
+print(f"Day Trades Remaining: {account.get_day_trades_remaining()}")
 
 # Trading - Place orders with ease
 from alpaca.trading.trading_helper import TradingHelper
