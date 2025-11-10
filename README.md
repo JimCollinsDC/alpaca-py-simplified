@@ -50,7 +50,9 @@ This repository is a **modified version** of the [official alpaca-py SDK](https:
 
 - **💼 Simplified Account Management API** - New `AccountHelper` class makes account management effortless. Get cash, buying power, portfolio value with native Python types. Built-in Pattern Day Trader tracking and portfolio history with simple date ranges. [Learn more →](docs/simplified_account_api.md)
 
-- **🔐 Environment Variable Support** - Integrated `python-dotenv` for secure API key management. Store your credentials in a `.env` file instead of hardcoding them.
+- **� Simplified News API** - New `NewsHelper` class provides easy access to financial news data. Simple methods for breaking news, symbol-specific articles, and historical news search with clean dataclass returns. [Learn more →](docs/simplified_news_api.md)
+
+- **�🔐 Environment Variable Support** - Integrated `python-dotenv` for secure API key management. Store your credentials in a `.env` file instead of hardcoding them.
 
 - **✅ Enhanced Code Quality** - Improved flake8 compliance, fixed type comparisons, exception handling, and code patterns across the codebase.
 
@@ -87,6 +89,14 @@ account = AccountHelper()  # Auto-loads from .env
 print(f"Cash: ${account.get_cash():,.2f}")
 print(f"Buying Power: ${account.get_buying_power():,.2f}")
 print(f"Day Trades Remaining: {account.get_day_trades_remaining()}")
+
+# News - Get financial news articles
+from alpaca.data.news_helper import NewsHelper
+
+news = NewsHelper()  # Auto-loads from .env
+articles = news.get_news_for_symbol("AAPL", days_back=7)
+for article in articles[:3]:
+    print(f"{article.headline} - {article.source}")
 
 # Trading - Place orders with ease
 from alpaca.trading.trading_helper import TradingHelper
