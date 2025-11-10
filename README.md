@@ -1,8 +1,13 @@
 # Alpaca-py Simplified
 
-[![Python Versions](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org)
-[![GitHub](https://img.shields.io/github/license/JimCollinsDC/alpaca-py-simplified?color=blue)](LICENSE)
-[![Tests](https://github.com/JimCollinsDC/alpaca-py-simplified/actions/workflows/ci.yaml/badge.svg)](https://github.com/JimCollinsDC/alpaca-py-simplified/actions)
+[![Python Versions](https://img.shields.io/badge/python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
+[![Tests](https://github.com/JimCollinsDC/alpaca-py-simplified/actions/workflows/ci.yaml/badge.svg?style=for-the-badge)](https://github.com/JimCollinsDC/alpaca-py-simplified/actions)
+[![License](https://img.shields.io/github/license/JimCollinsDC/alpaca-py-simplified?color=blue&style=for-the-badge)](LICENSE)
+[![Code Quality](https://img.shields.io/badge/code%20style-flake8-brightgreen?style=for-the-badge)](https://flake8.pycqa.org)
+
+[![GitHub Stars](https://img.shields.io/github/stars/JimCollinsDC/alpaca-py-simplified?style=social)](https://github.com/JimCollinsDC/alpaca-py-simplified/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/JimCollinsDC/alpaca-py-simplified?style=social)](https://github.com/JimCollinsDC/alpaca-py-simplified/network/members)
+[![GitHub Issues](https://img.shields.io/github/issues/JimCollinsDC/alpaca-py-simplified?style=flat-square)](https://github.com/JimCollinsDC/alpaca-py-simplified/issues)
 
 **A dramatically simplified Python SDK for Alpaca's trading and market data APIs**
 
